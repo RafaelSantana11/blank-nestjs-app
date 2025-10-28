@@ -72,7 +72,7 @@ export class UserEntity extends EntityRelationalHelper {
   @Column({ type: 'timestamp', nullable: true })
   trialStartDate: Date | null;
 
-  @Column({ type: 'string', nullable: true })
+  @Column({ type: String, nullable: true })
   messageApiKey: string | null;
 
   @CreateDateColumn()
