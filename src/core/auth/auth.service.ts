@@ -27,7 +27,7 @@ import { RoleEnum } from '../roles/roles.enum';
 import { Session } from '../session/domain/session';
 import { SessionService } from '../session/session.service';
 import { User } from '../users/domain/user';
-import { UserStatusEnum } from 'src/modules/users/infrastructure/persistence/relational/entities/user.entity';
+import { UserStatusEnum } from 'src/core/users/infrastructure/persistence/relational/entities/user.entity';
 
 @Injectable()
 export class AuthService {
