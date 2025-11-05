@@ -47,6 +47,7 @@ export class MailService {
           infer: true,
         }),
         'src',
+        'core',
         'mail',
         'mail-templates',
         'activation.hbs',

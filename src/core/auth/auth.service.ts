@@ -284,6 +284,16 @@ export class AuthService {
       });
     }
 
+    // Adiciona validação para garantir que o novo e-mail está presente no token
+    if (!newEmail) {
+      throw new UnprocessableEntityException({
+        status: HttpStatus.UNPROCESSABLE_ENTITY,
+        errors: {
+          hash: `invalidHash`,
+        },
+      });
+    }
+
     const user = await this.usersService.findById(userId);
 
     if (!user) {

@@ -1,6 +1,6 @@
 import { registerAs } from '@nestjs/config';
 
-import { IsEnum, IsString, ValidateIf } from 'class-validator';
+import { IsEnum, IsOptional, IsString, ValidateIf } from 'class-validator';
 import { FileDriver, FileConfig } from './file-config.type';
 import validateConfig from 'src/utils/validate-config';
 
@@ -12,24 +12,28 @@ class EnvironmentVariablesValidator {
     [FileDriver.S3, FileDriver.S3_PRESIGNED].includes(envValues.FILE_DRIVER),
   )
   @IsString()
+  @IsOptional()
   ACCESS_KEY_ID: string;
 
   @ValidateIf((envValues) =>
     [FileDriver.S3, FileDriver.S3_PRESIGNED].includes(envValues.FILE_DRIVER),
   )
   @IsString()
+  @IsOptional()
   SECRET_ACCESS_KEY: string;
 
   @ValidateIf((envValues) =>
     [FileDriver.S3, FileDriver.S3_PRESIGNED].includes(envValues.FILE_DRIVER),
   )
   @IsString()
+  @IsOptional()
   AWS_DEFAULT_S3_BUCKET: string;
 
   @ValidateIf((envValues) =>
     [FileDriver.S3, FileDriver.S3_PRESIGNED].includes(envValues.FILE_DRIVER),
   )
   @IsString()
+  @IsOptional()
   AWS_S3_REGION: string;
 }
 

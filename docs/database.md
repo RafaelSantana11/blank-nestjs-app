@@ -62,7 +62,7 @@ For support of both databases used [Hexagonal Architecture](architecture.md#hexa
 1. Next, generate migration file:
 
    ```bash
-   npm run migration:generate -- src/database/migrations/CreatePostTable
+   npm run migration:generate -- src/infra/database/migrations/CreatePostTable
    ```
 
 1. Apply this migration to database via [npm run migration:run](#run-migration).
@@ -128,7 +128,7 @@ npm run schema:drop
 ### Creating seeds (TypeORM)
 
 1. Create seed file with `npm run seed:create:relational -- --name Post`. Where `Post` is name of entity.
-1. Go to `src/database/seeds/relational/post/post-seed.service.ts`.
+1. Go to `src/infra/database/seeds/relational/post/post-seed.service.ts`.
 1. In `run` method extend your logic.
 1. Run [npm run seed:run:relational](#run-seed-typeorm)
 
@@ -146,7 +146,7 @@ npm run seed:run:relational
     npm i --save-dev @faker-js/faker
     ```
 
-1. Create `src/database/seeds/relational/user/user.factory.ts`:
+1. Create `src/infra/database/seeds/relational/user/user.factory.ts`:
 
     ```ts
     import { faker } from '@faker-js/faker';
@@ -192,7 +192,7 @@ npm run seed:run:relational
     }
     ```
 
-1. Make changes in `src/database/seeds/relational/user/user-seed.service.ts`:
+1. Make changes in `src/infra/database/seeds/relational/user/user-seed.service.ts`:
 
     ```ts
     // Some code here...
@@ -218,7 +218,7 @@ npm run seed:run:relational
     }
     ```
 
-1. Make changes in `src/database/seeds/relational/user/user-seed.module.ts`:
+1. Make changes in `src/infra/database/seeds/relational/user/user-seed.module.ts`:
 
     ```ts
     import { Module } from '@nestjs/common';
@@ -253,7 +253,7 @@ npm run seed:run:relational
 ### Creating seeds (Mongoose)
 
 1. Create seed file with `npm run seed:create:document -- --name Post`. Where `Post` is name of entity.
-1. Go to `src/database/seeds/document/post/post-seed.service.ts`.
+1. Go to `src/infra/database/seeds/document/post/post-seed.service.ts`.
 1. In `run` method extend your logic.
 1. Run [npm run seed:run:document](#run-seed-mongoose)
 
@@ -356,7 +356,7 @@ npm i mysql2 --save
 **Delete the existing migration file and generate a new one with the following script:**
 
 ```bash
-npm run migration:generate -- src/database/migrations/newMigration --pretty=true
+npm run migration:generate -- src/infra/database/migrations/newMigration --pretty=true
 ```
 
 Run migrations:
